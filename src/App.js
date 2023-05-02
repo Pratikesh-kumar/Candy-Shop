@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Header from './components/Header'
+import ProductList from './components/ProductList'
+import { useState } from 'react'
+
+const App = () => {
+  const[product,setProduct]=useState( [
+
+    {
+    
+    title: 'Colors',
+    
+    price: 100,
+    
+    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+    
+    quantity: 2,
+    
+    },
+    
+    {
+    
+    title: 'Black and white Colors',
+    
+    price: 50,
+    
+    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+    
+    quantity: 3,
+    
+    },
+    
+    {
+    
+    title: 'Yellow and Black Colors',
+    
+    price: 70,
+    
+    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+    
+    quantity: 1,
+    
+    }
+    
+    ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>
+      <ProductList product={product}></ProductList>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
